@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mealsub"
+version = "1.0.0"
+description = "SQL analytics, churn/cohort analysis and a constraint-aware meal-plan recommender for a meal-subscription business"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []          # standard library only
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+mealsub = "mealsub.cli:main"
+
+[tool.setuptools]
+packages = ["mealsub"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
