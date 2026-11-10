@@ -376,5 +376,5 @@ def _recommender_section(conn: sqlite3.Connection) -> str:
 def write_report(conn: sqlite3.Connection, path: str | Path) -> Path:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(build_report(conn), encoding="utf-8")
+    path.write_text(build_report(conn), encoding="utf-8", newline="\n")
     return path
